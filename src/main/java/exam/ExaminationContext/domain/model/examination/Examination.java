@@ -35,7 +35,7 @@ public class Examination implements Entity<Examination> {
     }
 
     private static void validateExamTime(LocalDateTime startTime, LocalDateTime dueTime) {
-        if (startTime.isAfter(LocalDateTime.now())) {
+        if (startTime.isBefore(LocalDateTime.now())) {
             throw new IllegalExaminationStartTimeException(startTime);
         }
         if (dueTime.isBefore(startTime)){

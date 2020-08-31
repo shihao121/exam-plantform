@@ -25,7 +25,7 @@ public class ExaminationController {
     @PostMapping("/examinations")
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    PaperDTO assemble(@RequestBody CreateExaminationCommand command) {
+    ExaminationDto assemble(@RequestBody CreateExaminationCommand command) {
         final ExaminationId examinationId = examinationApplicationService.createExamination(command);
         return ExaminationDto.from(examinationId);
     }

@@ -1,9 +1,12 @@
 package exam.ExaminationContext.domain.model.examination;
 
 import exam.ExaminationContext.shared.ValueObject;
+import lombok.Getter;
 
 import java.util.Objects;
+import java.util.UUID;
 
+@Getter
 public class ExaminationId implements ValueObject<ExaminationId> {
     private String id;
     @Override
@@ -11,9 +14,12 @@ public class ExaminationId implements ValueObject<ExaminationId> {
         return equals(other);
     }
 
+    private ExaminationId(String id){
+        this.id = id;
+    }
+
     public static ExaminationId nextId() {
-        //TODO Generate ID
-        return null;
+        return new ExaminationId(UUID.randomUUID().toString());
     }
 
     @Override
