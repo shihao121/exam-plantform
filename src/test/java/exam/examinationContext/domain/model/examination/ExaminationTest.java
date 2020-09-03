@@ -30,6 +30,6 @@ class ExaminationTest {
 	@Test
 	public void should_throw_exception_when_examination_end_time_illegal() {
 		assertThrows(IllegalExaminationDueTimeException.class, () -> Examination.create(ExaminationId.nextId(), "奥数期末考试", "暑期培训奥数期末考试", teacherId,
-				LocalDateTime.now(), LocalDateTime.now().plusSeconds(-1), new Examination.Paper("final exam paper", blankQuizzes)));
+				LocalDateTime.now().plusDays(1), LocalDateTime.now().plusSeconds(-1), new Examination.Paper("final exam paper", blankQuizzes)));
 	}
 }
