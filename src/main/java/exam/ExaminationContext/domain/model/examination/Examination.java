@@ -29,6 +29,34 @@ public class Examination implements Entity<Examination> {
         this.paper = paper;
     }
 
+    public ExaminationId getExaminationId() {
+        return examinationId;
+    }
+
+    public Paper getPaper() {
+        return paper;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalDateTime getDueTime() {
+        return dueTime;
+    }
+
     public static Examination create(ExaminationId examinationId, String name, String desc, String teacherId, LocalDateTime startTime, LocalDateTime dueTime, Paper paper) {
         validateExamTime(startTime, dueTime);
         return new Examination(examinationId, name, desc, teacherId, startTime, dueTime, paper);

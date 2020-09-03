@@ -13,7 +13,8 @@ import java.util.List;
 
 @EqualsAndHashCode(of = {"paperId"})
 public class Paper implements Entity<Paper> {
-    private PaperId paperId;
+    private PaperId paperId
+            ;
     private List<BlankQuiz> blankQuizzes;
     private String teacherId;
     private LocalDateTime createTime;
